@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-
+#FROM ubuntu:14.04
+FROM tomcat:8.0-jre8
 MAINTAINER Maksym Bilenko <sath891@gmail.com>
 
 # get rid of the message: "debconf: unable to initialize frontend: Dialog"
@@ -35,4 +35,6 @@ ENV transactions 610
 
 ADD entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
+
+COPY webserviceserguridad.war /usr/local/tomcat/webapps
 CMD [""]
